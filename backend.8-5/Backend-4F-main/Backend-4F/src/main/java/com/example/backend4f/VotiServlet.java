@@ -62,7 +62,6 @@ public class VotiServlet extends HttpServlet {
         }
 
         response.setContentType("text/html");
-
         PrintWriter out = response.getWriter();
         out.println("<html><body><h1>" + username + grades + "</h1></body></html>");
 

@@ -59,8 +59,8 @@ public class LoginServlet extends HttpServlet {
             System.out.println(authenticate("bob.smith", "wrongpassword")); // false
             System.out.println(authenticate("nonexistentuser", "password")); // false
         }
-    }
 
+    }
 
     public void destroy() {
     }

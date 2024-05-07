@@ -3,7 +3,6 @@ package org.example;
 import java.io.*;
 import java.util.ArrayList;
 
-
 @WebServlet(name = "voti", value = "/voti")
 public class VotiServlet extends HttpServlet {
 
@@ -55,12 +54,18 @@ public class VotiServlet extends HttpServlet {
             if (grades.length > 0) {
                 System.out.println("Grades for " + username + ":");
                 for (int grade : grades) {
-                    System.out.print(grade + " ");
+                    System.out.print(grade + ", ");
                 }
             } else {
                 System.out.println("No grades found for " + username);
             }
         }
+
+        response.setContentType("text/html");
+
+        PrintWriter out = response.getWriter();
+        out.println("<html><body><h1>" + username + grades + "</h1></body></html>");
+
     }
 
     public void destroy() {
